@@ -15,15 +15,26 @@ Development
    ```
    % easy_install --user pip
    % ~/Library/Python/2.7/bin/pip install --user virtualenv
-   % cd ${ORIBIR}/
-   % ~/Library/Python/2.7/bin/virtualenv virtualenv
-   % source virtualenv/bin/activate
-   % pip install numpy scipy matplotlib
-   % echo "$(brew --prefix)/lib/python2.7/site-packages" > virtualenv/lib/python2.7/site-packages/homebrew.pth
+   % ~/Library/Python/2.7/bin/virtualenv ~/.virtualenv/oribir
+   % source ~/.virtualenv/oribir/bin/activate
+   (oribir)% echo "$(brew --prefix)/lib/python2.7/site-packages" > ${VIRTUAL_ENV}/lib/python2.7/site-packages/homebrew.pth
    ```
+
+1. Install [numpy](http://www.numpy.org/),
+   [scipy](http://www.scipy.org/), [matplotlib](http://matplotlib.org/)
+   ```
+   (oribir)% pip install numpy scipy matplotlib
+   ```
+
+1. Download source
+   ```
+   (oribir)% git clone https://github.com/heavywatal/oribir.git ~/git/oribir
+   (oribir)% cd ~/git/oribir
+   ```
+
 1. Run
    ```
-   % python qtapp.py
+   (oribir)% make run
    ```
 
 1. Build executable app with [PyInstaller](http://www.pyinstaller.org/)

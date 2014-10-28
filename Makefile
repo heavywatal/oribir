@@ -1,7 +1,7 @@
 SRCS := chromosome.py individual.py population.py simulation.py selection.py qaction.py qchart.py qgraphics.py qparams.py qtapp.py setup.py translations/pyqt4.pro
 
 .DEFAULT_GOAL := all
-.PHONY: all clean build open run
+.PHONY: all clean open run build
 
 all:
 	$(MAKE) build
@@ -10,18 +10,15 @@ clean:
 	$(RM) -rf *.pyc log*log Oribir-darwin
 
 open:
-	tx ${SRCS}
+	open -a mi ${SRCS}
 
-run:
+run: translations.py
 	python qtapp.py
 
 build:
 	python setup.py
 
-tr:
+translations.py: ${SRCS}
 	pylupdate4 -verbose translations/pyqt4.pro
-	open translations/ja_JP.ts
-	less translations/ja_JP.ts
 	lrelease translations/ja_JP.ts
 	pyrcc4 translations.qrc -o translations.py
-
