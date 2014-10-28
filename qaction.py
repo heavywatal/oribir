@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+"""
 from PyQt4 import QtGui, QtCore
-#import icons
 
 
 class Quit(QtGui.QAction):
@@ -8,7 +11,6 @@ class Quit(QtGui.QAction):
         self.setText(self.tr("&Quit"))
         self.triggered.connect(app.quit)
         #self.triggered.connect(sys.exit)
-#        self.setIcon(QtGui.QIcon(":system-shutdown"))
         qs = QtGui.QStyle.SP_TitleBarCloseButton
         self.setIcon(parent.style().standardIcon(qs))
         self.setShortcut('Ctrl+Q')
@@ -19,7 +21,6 @@ class Open(QtGui.QAction):
     def __init__(self, parent):
         super(Open, self).__init__(parent)
         self.setText(self.tr("&Open"))
-#        self.setIcon(QtGui.QIcon(":document-open"))
         qs = QtGui.QStyle.SP_DialogOpenButton
         self.setIcon(parent.style().standardIcon(qs))
         self.setShortcut('Ctrl+O')
@@ -29,7 +30,6 @@ class Save(QtGui.QAction):
     def __init__(self, parent):
         super(Save, self).__init__(parent)
         self.setText(self.tr("&Save"))
-#        self.setIcon(QtGui.QIcon(":document-save"))
         qs = QtGui.QStyle.SP_DialogSaveButton
         self.setIcon(parent.style().standardIcon(qs))
         self.setShortcut('Ctrl+S')

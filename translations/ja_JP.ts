@@ -16,7 +16,7 @@
         <translation type="obsolete">オアシス多い</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="62"/>
+        <location filename="../qparams.py" line="66"/>
         <source>Medium</source>
         <translation>中程度</translation>
     </message>
@@ -26,12 +26,12 @@
         <translation type="obsolete">オアシス少ない</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="61"/>
+        <location filename="../qparams.py" line="65"/>
         <source>Rich</source>
         <translation>多い</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="63"/>
+        <location filename="../qparams.py" line="67"/>
         <source>Poor</source>
         <translation>少ない</translation>
     </message>
@@ -139,7 +139,7 @@
 <context>
     <name>Open</name>
     <message>
-        <location filename="../qaction.py" line="21"/>
+        <location filename="../qaction.py" line="23"/>
         <source>&amp;Open</source>
         <translation>開く (&amp;O)</translation>
     </message>
@@ -147,7 +147,7 @@
 <context>
     <name>ParamsGroupBox</name>
     <message>
-        <location filename="../qparams.py" line="122"/>
+        <location filename="../qparams.py" line="126"/>
         <source>Parameters</source>
         <translation>パラメータ</translation>
     </message>
@@ -157,22 +157,22 @@
         <translation type="obsolete">環境</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="124"/>
+        <location filename="../qparams.py" line="128"/>
         <source>Mutation Rate</source>
         <translation>突然変異率</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="125"/>
+        <location filename="../qparams.py" line="129"/>
         <source>Population Size</source>
         <translation>個体数</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="126"/>
+        <location filename="../qparams.py" line="130"/>
         <source>Duration</source>
         <translation>世代数</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="123"/>
+        <location filename="../qparams.py" line="127"/>
         <source>Oasis</source>
         <translation>オアシス</translation>
     </message>
@@ -193,12 +193,12 @@
 <context>
     <name>Quit</name>
     <message>
-        <location filename="../qaction.py" line="8"/>
+        <location filename="../qaction.py" line="11"/>
         <source>&amp;Quit</source>
         <translation>終了 (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../qaction.py" line="15"/>
+        <location filename="../qaction.py" line="17"/>
         <source>Quit application</source>
         <translation>アプリケーションを終了する</translation>
     </message>
@@ -206,7 +206,7 @@
 <context>
     <name>Save</name>
     <message>
-        <location filename="../qaction.py" line="31"/>
+        <location filename="../qaction.py" line="32"/>
         <source>&amp;Save</source>
         <translation>保存 (&amp;S)</translation>
     </message>
@@ -214,17 +214,17 @@
 <context>
     <name>Summary</name>
     <message>
-        <location filename="../qchart.py" line="108"/>
+        <location filename="../qchart.py" line="112"/>
         <source>Min</source>
         <translation>最小</translation>
     </message>
     <message>
-        <location filename="../qchart.py" line="109"/>
+        <location filename="../qchart.py" line="113"/>
         <source>Mean</source>
         <translation>平均</translation>
     </message>
     <message>
-        <location filename="../qchart.py" line="110"/>
+        <location filename="../qchart.py" line="114"/>
         <source>Max</source>
         <translation>最大</translation>
     </message>
