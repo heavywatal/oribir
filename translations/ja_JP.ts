@@ -3,7 +3,7 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qaction.py" line="41"/>
+        <location filename="../qaction.py" line="40"/>
         <source>About</source>
         <translation>このプログラムについて</translation>
     </message>
@@ -39,12 +39,12 @@
 <context>
     <name>CrossingWidget</name>
     <message>
-        <location filename="../qtapp.py" line="356"/>
+        <location filename="../qtapp.py" line="349"/>
         <source>Crossing Experiment</source>
         <translation>交配実験</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="356"/>
+        <location filename="../qtapp.py" line="349"/>
         <source>Select an individual from each simulation</source>
         <translation>実験に使う個体をそれぞれの条件のシミュレーションから選んでおいてください</translation>
     </message>
@@ -52,12 +52,12 @@
 <context>
     <name>EvolutionWidget</name>
     <message>
-        <location filename="../qtapp.py" line="210"/>
+        <location filename="../qtapp.py" line="201"/>
         <source>Forewing</source>
         <translation>前羽サイズ</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="210"/>
+        <location filename="../qtapp.py" line="201"/>
         <source>Hindwing</source>
         <translation>後羽サイズ</translation>
     </message>
@@ -67,7 +67,7 @@
         <translation type="obsolete">飛行距離</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="209"/>
+        <location filename="../qtapp.py" line="200"/>
         <source>10 individuals randomly chosen</source>
         <translation>集団の中から10個体をランダムに表示</translation>
     </message>
@@ -77,27 +77,27 @@
         <translation type="obsolete">交配実験に使う個体を選んでクリック</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="223"/>
+        <location filename="../qtapp.py" line="214"/>
         <source>Note</source>
         <translation>注意</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="223"/>
+        <location filename="../qtapp.py" line="214"/>
         <source>The simulation state in this tab is reset</source>
         <translation>リセットによって、このタブのシミュレーション結果は消去されます</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="213"/>
+        <location filename="../qtapp.py" line="205"/>
         <source>Generations</source>
         <translation>世代数</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="208"/>
+        <location filename="../qtapp.py" line="199"/>
         <source>Click one for crossing experiment</source>
         <translation>交配実験に使う個体を選んでクリック</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="210"/>
+        <location filename="../qtapp.py" line="201"/>
         <source>Flight Distance</source>
         <translation>飛行距離</translation>
     </message>
@@ -105,12 +105,12 @@
 <context>
     <name>LockButton</name>
     <message>
-        <location filename="../qtapp.py" line="123"/>
+        <location filename="../qtapp.py" line="114"/>
         <source>Lock</source>
         <translation>値を固定</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="129"/>
+        <location filename="../qtapp.py" line="120"/>
         <source>Reset</source>
         <translation>リセット</translation>
     </message>
@@ -118,7 +118,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../qtapp.py" line="434"/>
+        <location filename="../qtapp.py" line="427"/>
         <source>Language</source>
         <translation>言語</translation>
     </message>
@@ -126,12 +126,12 @@
 <context>
     <name>MenuBar</name>
     <message>
-        <location filename="../qtapp.py" line="476"/>
+        <location filename="../qtapp.py" line="470"/>
         <source>&amp;File</source>
         <translation>ファイル (&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="477"/>
+        <location filename="../qtapp.py" line="471"/>
         <source>&amp;Help</source>
         <translation>ヘルプ (&amp;H)</translation>
     </message>
@@ -139,7 +139,7 @@
 <context>
     <name>Open</name>
     <message>
-        <location filename="../qaction.py" line="23"/>
+        <location filename="../qaction.py" line="22"/>
         <source>&amp;Open</source>
         <translation>開く (&amp;O)</translation>
     </message>
@@ -147,7 +147,7 @@
 <context>
     <name>ParamsGroupBox</name>
     <message>
-        <location filename="../qparams.py" line="126"/>
+        <location filename="../qparams.py" line="128"/>
         <source>Parameters</source>
         <translation>パラメータ</translation>
     </message>
@@ -157,22 +157,22 @@
         <translation type="obsolete">環境</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="128"/>
+        <location filename="../qparams.py" line="130"/>
         <source>Mutation Rate</source>
         <translation>突然変異率</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="129"/>
+        <location filename="../qparams.py" line="131"/>
         <source>Population Size</source>
         <translation>個体数</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="130"/>
+        <location filename="../qparams.py" line="132"/>
         <source>Duration</source>
         <translation>世代数</translation>
     </message>
     <message>
-        <location filename="../qparams.py" line="127"/>
+        <location filename="../qparams.py" line="129"/>
         <source>Oasis</source>
         <translation>オアシス</translation>
     </message>
@@ -180,12 +180,12 @@
 <context>
     <name>PlayPauseButton</name>
     <message>
-        <location filename="../qtapp.py" line="98"/>
+        <location filename="../qtapp.py" line="90"/>
         <source>Pause</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="104"/>
+        <location filename="../qtapp.py" line="95"/>
         <source>Start</source>
         <translation>スタート</translation>
     </message>
@@ -198,7 +198,7 @@
         <translation>終了 (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../qaction.py" line="17"/>
+        <location filename="../qaction.py" line="16"/>
         <source>Quit application</source>
         <translation>アプリケーションを終了する</translation>
     </message>
@@ -206,7 +206,7 @@
 <context>
     <name>Save</name>
     <message>
-        <location filename="../qaction.py" line="32"/>
+        <location filename="../qaction.py" line="31"/>
         <source>&amp;Save</source>
         <translation>保存 (&amp;S)</translation>
     </message>
@@ -214,17 +214,17 @@
 <context>
     <name>Summary</name>
     <message>
-        <location filename="../qchart.py" line="112"/>
+        <location filename="../qchart.py" line="110"/>
         <source>Min</source>
         <translation>最小</translation>
     </message>
     <message>
-        <location filename="../qchart.py" line="113"/>
+        <location filename="../qchart.py" line="111"/>
         <source>Mean</source>
         <translation>平均</translation>
     </message>
     <message>
-        <location filename="../qchart.py" line="114"/>
+        <location filename="../qchart.py" line="112"/>
         <source>Max</source>
         <translation>最大</translation>
     </message>
@@ -232,7 +232,7 @@
 <context>
     <name>TabWidget</name>
     <message>
-        <location filename="../qtapp.py" line="395"/>
+        <location filename="../qtapp.py" line="388"/>
         <source>Crossing Experiment</source>
         <translation>交配実験</translation>
     </message>
@@ -252,17 +252,17 @@
         <translation type="obsolete">交配実験に使う個体を選んでクリック</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="398"/>
+        <location filename="../qtapp.py" line="391"/>
         <source>Cross</source>
         <translation>交配</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="393"/>
+        <location filename="../qtapp.py" line="386"/>
         <source>Environment 1</source>
         <translation>環境 1</translation>
     </message>
     <message>
-        <location filename="../qtapp.py" line="394"/>
+        <location filename="../qtapp.py" line="387"/>
         <source>Environment 2</source>
         <translation>環境 2</translation>
     </message>

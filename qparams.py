@@ -91,8 +91,10 @@ class ParamsGroupBox(QtGui.QGroupBox, object):
         QtGui.QGroupBox.__init__(self, master)
 
         self._params = dict()
-        self._params["environment"] = ComboBox(master, next(self.__class__.initial_env_gen))
-        self._params["mutation_rate"] = DoubleSpinBox(master, 1e-3, 1e-1, 1e-3, 1e-2)
+        self._params["environment"] = ComboBox(
+            master, next(self.__class__.initial_env_gen))
+        self._params["mutation_rate"] = DoubleSpinBox(
+            master, 1e-3, 1e-1, 1e-3, 1e-2)
         self._params["pop_size"] = SpinBox(master, 10, 200, 10, 30)
         self._params["duration"] = SpinBox(master, 10, 200, 10, 30)
 
@@ -130,4 +132,3 @@ class ParamsGroupBox(QtGui.QGroupBox, object):
         self.labels[3].setText(self.tr("Duration"))
         self._params["environment"].retr()
         return
-

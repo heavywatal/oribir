@@ -6,22 +6,15 @@
 import random
 import os
 import sys
-sys.path.append("/usr/local/lib/python{0}/site-packages".format(sys.version[:3]))
-
-#import sip
-#sip.setapi('QString', 2)
 
 from PyQt4 import QtGui, QtCore
-#from PySide import QtGui, QtCore
-# resource converted from qrc by pyrcc4
-
 QtCore.QTextCodec.setCodecForCStrings(QtCore.QTextCodec.codecForName("utf-8"))
 QtCore.QTextCodec.setCodecForTr(QtCore.QTextCodec.codecForName("utf-8"))
 import translations
 
 if sys.platform.startswith("darwin"):
-    sys.path.append("/System/Library/Frameworks/Python.framework/\
-Versions/2.7/Extras/lib/python/PyObjc")
+    sys.path.append("/System/Library/Frameworks/Python.framework/"
+                    "Versions/2.7/Extras/lib/python/PyObjc")
     import Foundation
 
 import numpy
@@ -31,8 +24,7 @@ from qgraphics import *
 from qchart import *
 from qparams import *
 from qaction import *
-
-#########1#########2#########3#########4#########5#########6#########7#########
+# #######1#########2#########3#########4#########5#########6#########7#########
 
 
 class Thread(QtCore.QThread):
@@ -82,8 +74,8 @@ class Thread(QtCore.QThread):
         self._is_killed = False
 
 
-#########1#########2#########3#########4#########5#########6#########7#########
-## Tabs
+# #######1#########2#########3#########4#########5#########6#########7#########
+# Tabs
 
 class PlayPauseButton(QtGui.QPushButton):
     def __init__(self, master):
@@ -100,7 +92,6 @@ class PlayPauseButton(QtGui.QPushButton):
     def set_text_play(self):
         self._is_playing = False
         self.setIcon(self.style().standardIcon(QtGui.QStyle.SP_MediaPlay))
-        #self.setIcon(QtGui.QIcon(":media-playback-start"))
         return self.setText(self.tr("Start"))
 
     def retr(self):
@@ -168,9 +159,11 @@ class EvolutionWidget(QtGui.QWidget):
 
         for chart in self._charts:
             hbox.addWidget(chart)
-        self.view = GraphicsView(self, [640, 320], self.params.environment.currentIndex())
+        self.view = GraphicsView(self, [640, 320],
+                                 self.params.environment.currentIndex())
         self.view.fit_scene()
-        self.params.environment.currentIndexChanged.connect(self.view.scene().set_oasis)
+        self.params.environment.currentIndexChanged.connect(
+            self.view.scene().set_oasis)
         self.view.scene().selected.connect(self.selected_emit)
         self.view.scene().is_clickable = True
 
@@ -197,9 +190,7 @@ class EvolutionWidget(QtGui.QWidget):
         self.set_xlim_to_duration(self.params.duration)
         self.params.duration_changed.connect(self.set_xlim_to_duration)
         self._t = 0
-
         self.retr()
-
 
     def retr(self):
         self.params.retr()
@@ -207,12 +198,12 @@ class EvolutionWidget(QtGui.QWidget):
         self.play_pause_button.retr()
         self.choose_click.setText(self.tr("Click one for crossing experiment"))
         self.randomly_chosen.setText(self.tr("10 individuals randomly chosen"))
-        titles = (self.tr("Forewing"), self.tr("Hindwing"), self.tr("Flight Distance"))
+        titles = (self.tr("Forewing"), self.tr("Hindwing"),
+                  self.tr("Flight Distance"))
         for (chart, main) in zip(self._charts, titles):
             chart.main.setText(main)
             chart.xlab.setText(self.tr("Generations"))
             chart.summary.retr()
-            
 
     def toggle_lock(self):
         if self.params.isEnabled():
@@ -220,7 +211,8 @@ class EvolutionWidget(QtGui.QWidget):
             self.params.locked.emit(True)
         else:
             if self._t:
-                ret = QtGui.QMessageBox.question(None,
+                ret = QtGui.QMessageBox.question(
+                    None,
                     self.tr("Note"),
                     self.tr("The simulation state in this tab is reset"),
                     QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok,
@@ -329,7 +321,8 @@ class CrossingWidget(QtGui.QWidget):
         for (i, tab) in enumerate(tabs):
             view = GraphicsView(self, [270, 270],
                                 tab.params.environment.currentIndex())
-            tab.params.environment.currentIndexChanged.connect(view.scene().set_oasis)
+            tab.params.environment.currentIndexChanged.connect(
+                view.scene().set_oasis)
             tab.selected.connect(view.assign)
             tab.selected.connect(self._hybrid_view.clear_)
             self.views[tab] = view
@@ -353,7 +346,8 @@ class CrossingWidget(QtGui.QWidget):
     def cross(self):
         qgias = [v.birds for v in self.views.values()]
         if not all(qgias):
-            return QtGui.QMessageBox.information(self,
+            return QtGui.QMessageBox.information(
+                self,
                 self.tr("Crossing Experiment"),
                 self.tr("Select an individual from each simulation"))
         substances = [l[0].item().substance for l in qgias]
@@ -368,11 +362,10 @@ class CrossingWidget(QtGui.QWidget):
         for view in self.views.values() + [self._hybrid_view]:
             view.freeze()
         return
-        
 
-#########1#########2#########3#########4#########5#########6#########7#########
-## Main widgets
 
+# #######1#########2#########3#########4#########5#########6#########7#########
+# Main widgets
 
 class TabWidget(QtGui.QTabWidget):
     def __init__(self, parent):
@@ -443,26 +436,27 @@ class MainWindow(QtGui.QMainWindow):
 
     def closeEvent(self, event):
         return
-        ret = QtGui.QMessageBox.question(self,
-                "Closing the main window",
-                "Do you really want to close?",
-                QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok,
-                QtGui.QMessageBox.Ok)
+        ret = QtGui.QMessageBox.question(
+            self,
+            "Closing the main window",
+            "Do you really want to close?",
+            QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok,
+            QtGui.QMessageBox.Ok)
         if ret == QtGui.QMessageBox.Ok:
             event.accept()
         else:
             event.ignore()
 
 
-#########1#########2#########3#########4#########5#########6#########7#########
-## peripheral widgets
+# #######1#########2#########3#########4#########5#########6#########7#########
+# peripheral widgets
 
 class MenuBar(QtGui.QMenuBar):
     def __init__(self, parent):
         super(MenuBar, self).__init__(parent)
         self.menu_file = self.addMenu('')
-        #self.menu_file.addAction(Save(self))
-        #self.menu_file.addAction(Open(self))
+#        self.menu_file.addAction(Save(self))
+#        self.menu_file.addAction(Open(self))
         self.menu_file.addAction(Quit(self, app))
 
         self.menu_help = self.addMenu('')
@@ -479,9 +473,8 @@ class MenuBar(QtGui.QMenuBar):
 
 
 locales = {
-"en_US": "English",
-"ja_JP": "日本語",
-}
+    "en_US": "English",
+    "ja_JP": "日本語"}
 
 
 class LocaleChooser(QtGui.QComboBox):
@@ -509,7 +502,7 @@ class ToolBar(QtGui.QToolBar):
 class StatusBar(QtGui.QStatusBar):
     def __init__(self, parent):
         QtGui.QStatusBar.__init__(self, parent)
-        #self.addPermanentWidget(ToolButton(Quit(self)))
+#        self.addPermanentWidget(ToolButton(Quit(self)))
 
 
 class ToolButton(QtGui.QToolButton):
@@ -519,8 +512,8 @@ class ToolButton(QtGui.QToolButton):
         self.setToolButtonStyle(style)
 
 
-#########1#########2#########3#########4#########5#########6#########7#########
-## Global
+# #######1#########2#########3#########4#########5#########6#########7#########
+# Global
 
 def center(widget):
     screen = QtGui.QDesktopWidget().screenGeometry()

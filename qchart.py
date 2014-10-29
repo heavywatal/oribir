@@ -6,9 +6,7 @@ from PyQt4 import QtGui, QtCore
 
 import matplotlib
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg
-
-#########1#########2#########3#########4#########5#########6#########7#########
-##
+# #######1#########2#########3#########4#########5#########6#########7#########
 
 
 class Canvas(FigureCanvasQTAgg):
@@ -25,7 +23,7 @@ class Canvas(FigureCanvasQTAgg):
 #        self.axes.get_yaxis().set_visible(False)
         self.setParent(parent)
         self.setMinimumSize(150, 160)
-        #self.setMaximumSize(200, 240)
+#        self.setMaximumSize(200, 240)
 
     def clear_(self):
         self.axes.clear()
