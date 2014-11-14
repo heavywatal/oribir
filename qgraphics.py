@@ -6,12 +6,11 @@ import random
 
 from PyQt4 import QtGui, QtCore
 
-import numpy
+import numpy as np
 
 import simulation
-
-#########1#########2#########3#########4#########5#########6#########7#########
-## Drawings
+# #######1#########2#########3#########4#########5#########6#########7#########
+# Drawings
 
 
 class GraphicsItemAnimationBird(QtGui.QGraphicsItemAnimation):
@@ -36,15 +35,17 @@ class CopulatingMale(GraphicsItemAnimationBird):
                 step = i / 200.0
                 self.setPosAt(step, QtCore.QPointF(
                     present_x + step * 120,
-                    present_y - 6 * fore_le_rear * numpy.sin(0.9 * numpy.pi * step)))
-                self.setScaleAt(step, 1, 1 - 0.3 * fore_le_rear * numpy.sin(numpy.pi * step))
+                    present_y - 6 * fore_le_rear * np.sin(0.9 * np.pi * step)))
+                self.setScaleAt(
+                    step, 1, 1 - 0.3 * fore_le_rear * np.sin(np.pi * step))
         else:
             for i in range(201):
                 step = i / 200.0
                 self.setPosAt(step, QtCore.QPointF(
                     present_x + 70 - abs(step - 0.5) * 140,
-                    present_y - 4 * fore_le_rear * numpy.sin(0.9 * numpy.pi * step)))
-                self.setScaleAt(step, 1, 1 - 0.1 * fore_le_rear * numpy.sin(numpy.pi * step))
+                    present_y - 4 * fore_le_rear * np.sin(0.9 * np.pi * step)))
+                self.setScaleAt(
+                    step, 1, 1 - 0.1 * fore_le_rear * np.sin(np.pi * step))
         return
 
 
@@ -60,16 +61,16 @@ class CopulatingFemale(GraphicsItemAnimationBird):
             for i in range(201):
                 step = i / 200.0
                 self.setPosAt(step, QtCore.QPointF(
-                    present_x - 10 * numpy.sin(numpy.pi * step),
+                    present_x - 10 * np.sin(np.pi * step),
                     present_y))
-                self.setScaleAt(step, 1, 1 + 0.3 * numpy.sin(numpy.pi * step))
+                self.setScaleAt(step, 1, 1 + 0.3 * np.sin(np.pi * step))
         else:
             for i in range(201):
                 step = i / 200.0
                 self.setPosAt(step, QtCore.QPointF(
-                    present_x - 10 * numpy.sin(numpy.pi * step),
+                    present_x - 10 * np.sin(np.pi * step),
                     present_y))
-                self.setScaleAt(step, 1, 1 + 0.1 * numpy.sin(numpy.pi * step))
+                self.setScaleAt(step, 1, 1 + 0.1 * np.sin(np.pi * step))
         return
 
 
@@ -99,10 +100,11 @@ class FlyingBird(QtGui.QGraphicsItemAnimation):
         dy = random.uniform(-distance, distance)
         for i in range(201):
             step = i / 200.0
-            self.setRotationAt(step, -0.2 * distance * numpy.sin(2.0 * numpy.pi * step))
+            self.setRotationAt(
+                step, -0.2 * distance * np.sin(2.0 * np.pi * step))
             self.setPosAt(step, QtCore.QPointF(
                 (present_x + 8 * distance * step) % (scene_width + 32),
-                present_y - 2 * distance * numpy.sin(numpy.pi * step) + dy * step
+                present_y - 2 * distance * np.sin(np.pi * step) + dy * step
             ))
         self.timeLine().start()
 
@@ -157,8 +159,8 @@ class BirdItem(QtGui.QGraphicsItem):
 
     def set_random_pos(self):
         rectf = self.scene().sceneRect()
-        x = numpy.random.randint(0, rectf.width())
-        y = numpy.random.randint(self.boundingRect().height(), rectf.height())
+        x = np.random.randint(0, rectf.width())
+        y = np.random.randint(self.boundingRect().height(), rectf.height())
         return self.setPos(QtCore.QPointF(x, y))
 
 #    def set_loop_pos(self):
@@ -280,7 +282,7 @@ class GraphicsView(QtGui.QGraphicsView):
     def copulate(self, male, female):
         self.scene().clear()
         self._children = female * male
-        successful = self._children#female.accept(male)
+        successful = self._children
         copulating_male = CopulatingMale(male, successful)
         copulating_female = CopulatingFemale(female, successful)
         self._birds = [copulating_male, copulating_female]

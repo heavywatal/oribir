@@ -21,7 +21,8 @@ class Individual(object):
             self._diploid = other
         diploid = [h.decode_() for h in self._diploid]
         self._traits = [(lhs + rhs) / 2 for (lhs, rhs) in zip(*diploid)]
-        self._flight = self._traits[1] - self._traits[0] + (4 ** Chromosome._DIGITS) - 1
+        self._flight = self._traits[1] - self._traits[0]
+        self._flight += (4 ** Chromosome._DIGITS) - 1
         self._fitness = 0
         return
 
@@ -55,7 +56,6 @@ class Individual(object):
 
     def fight(self, fitness_landscape):
         self._fitness = fitness_landscape(self._flight)
-        #self._fitness = sum(self._traits) * 0.1
         return
 
     def gametogenesis(self):
@@ -74,7 +74,7 @@ class Individual(object):
     def accept(self, other):
         """return if crossable or not
         """
-        if any([abs(x - y) > 5 for (x, y) in zip(self._traits, other._traits)]):
+        if any([abs(x - y) > 5 for x, y in zip(self._traits, other._traits)]):
             return False
         if self.fore_le_rear():
             return self._traits[1] >= other._traits[0]
@@ -85,7 +85,7 @@ class Individual(object):
 def average_gauss(lhs, rhs):
     return random.gauss((lhs + rhs) / 2, abs(lhs - rhs))
 
-#########1#########2#########3#########4#########5#########6#########7#########
+# #######1#########2#########3#########4#########5#########6#########7#########
 
 if __name__ == '__main__':
     import argparse
@@ -99,10 +99,12 @@ if __name__ == '__main__':
         individual = Individual()
         print(individual)
     elif len(args.args) > 1:
-        father = Individual([Chromosome(args.args[0]), Chromosome(args.args[1])])
+        father = Individual([Chromosome(args.args[0]),
+                             Chromosome(args.args[1])])
         print(father)
     if len(args.args) > 3:
-        mother = Individual([Chromosome(args.args[2]), Chromosome(args.args[3])])
+        mother = Individual([Chromosome(args.args[2]),
+                             Chromosome(args.args[3])])
         children = father * mother
         print(mother)
         print(children)

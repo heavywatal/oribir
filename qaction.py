@@ -10,7 +10,6 @@ class Quit(QtGui.QAction):
         super(Quit, self).__init__(parent)
         self.setText(self.tr("&Quit"))
         self.triggered.connect(app.quit)
-        #self.triggered.connect(sys.exit)
         qs = QtGui.QStyle.SP_TitleBarCloseButton
         self.setIcon(parent.style().standardIcon(qs))
         self.setShortcut('Ctrl+Q')
@@ -45,6 +44,7 @@ class About(QtGui.QAction):
 
 
 def about(parent):
-    return QtGui.QMessageBox.about(None,
-            "About Origami Bird Simulator",
-            "Takahiro Yamanoi and Watal M. Iwasaki")
+    return QtGui.QMessageBox.about(
+        None,
+        "About Origami Bird Simulator",
+        "Takahiro Yamanoi and Watal M. Iwasaki")
