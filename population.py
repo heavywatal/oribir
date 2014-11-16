@@ -12,8 +12,8 @@ from individual import Individual
 
 class FitnessLandscape(object):
     def __init__(self):
-        self._sigma = 0.5
-        self._inv_2_pi_sigma = 1.0 / math.sqrt(2 * math.pi * self._sigma)
+        sigma = 0.5
+        self._const = - 0.5 / sigma ** 2
         return
 
     def get(self, env_type=1):
@@ -24,17 +24,14 @@ class FitnessLandscape(object):
         else:
             return self.original
 
-    def gaussian(self, x, mu):
-        return math.exp(-0.5 * ((x - mu) / self._sigma)**2) * self._inv_2_pi_sigma
-
     def original(self, flight):
-        return self.gaussian(flight / 30.0, 0.5)
+        return math.exp(self._const * (flight / 30.0 - 0.5)**2)
 
     def fly_favored(self, flight):
-        return self.gaussian(flight / 30.0, 0.97)
+        return math.exp(self._const * (flight / 30.0 - 0.97)**2)
 
     def hop_favored(self, flight):
-        return self.gaussian(flight / 30.0, 0.03)
+        return math.exp(self._const * (flight / 30.0 - 0.03)**2)
 
 
 class Population(object):
@@ -81,12 +78,13 @@ if __name__ == '__main__':
     figure = plt.figure()
     figure.add_subplot(1, 1, 1)
     ax = figure.axes[0]
-    ax.plot(xaxis, [landscape.original(x) for x in xaxis],
-            label="Original")
-    ax.plot(xaxis, [landscape.fly_favored(x) for x in xaxis],
-            label="Oasis-poor")
     ax.plot(xaxis, [landscape.hop_favored(x) for x in xaxis],
-            label="Oasis-rich")
+            label="Oasis-rich", linewidth=3)
+    ax.plot(xaxis, [landscape.original(x) for x in xaxis],
+            label="Original", linewidth=3)
+    ax.plot(xaxis, [landscape.fly_favored(x) for x in xaxis],
+            label="Oasis-poor", linewidth=3)
+    plt.ylim(0, 1.05)
     ax.set_title("Fitness Landscape for Origami Birds")
     ax.set_ylabel("Fitness")
     ax.set_xlabel("Flight")
