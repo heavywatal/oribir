@@ -316,7 +316,7 @@ class CrossingWidget(QtGui.QWidget):
 
         self._parents_layout = QtGui.QHBoxLayout()
         self.parents_labels = []
-        self.views = dict()
+        self.views = []
         self._hybrid_view = GraphicsView(self, [640, 320])
         for (i, tab) in enumerate(tabs):
             view = GraphicsView(self, [270, 270],
@@ -325,7 +325,7 @@ class CrossingWidget(QtGui.QWidget):
                 view.scene().set_oasis)
             tab.selected.connect(view.assign)
             tab.selected.connect(self._hybrid_view.clear_)
-            self.views[tab] = view
+            self.views.append(view)
             vbox = QtGui.QVBoxLayout()
             label = QtGui.QLabel(self)
             vbox.addWidget(label)
@@ -344,7 +344,7 @@ class CrossingWidget(QtGui.QWidget):
         layout.addLayout(hbox)
 
     def cross(self):
-        qgias = [v.birds for v in self.views.values()]
+        qgias = [v.birds for v in self.views]
         if not all(qgias):
             return QtGui.QMessageBox.information(
                 self,
@@ -354,12 +354,12 @@ class CrossingWidget(QtGui.QWidget):
         return self._hybrid_view.copulate(*substances)
 
     def animate(self):
-        for view in self.views.values() + [self._hybrid_view]:
+        for view in self.views + [self._hybrid_view]:
             view.animate()
         return
 
     def freeze(self):
-        for view in self.views.values() + [self._hybrid_view]:
+        for view in self.views + [self._hybrid_view]:
             view.freeze()
         return
 
