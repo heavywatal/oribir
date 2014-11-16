@@ -23,7 +23,7 @@ Development
 1. Install [numpy](http://www.numpy.org/),
    [scipy](http://www.scipy.org/), [matplotlib](http://matplotlib.org/)
    ```
-   (oribir)% pip install numpy scipy matplotlib
+   (oribir)% pip install numpy matplotlib
    ```
 
 1. Download source

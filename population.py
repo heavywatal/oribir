@@ -9,11 +9,11 @@ import math
 import selection
 from individual import Individual
 
-import scipy.stats
-
 
 class FitnessLandscape(object):
     def __init__(self):
+        self._sigma = 0.5
+        self._inv_2_pi_sigma = 1.0 / math.sqrt(2 * math.pi * self._sigma)
         return
 
     def get(self, env_type=1):
@@ -24,14 +24,17 @@ class FitnessLandscape(object):
         else:
             return self.original
 
+    def gaussian(self, x, mu):
+        return math.exp(-0.5 * ((x - mu) / self._sigma)**2) * self._inv_2_pi_sigma
+
     def original(self, flight):
-        return scipy.stats.norm.pdf(flight / 30.0, 0.5, 0.2)
+        return self.gaussian(flight / 30.0, 0.5)
 
     def fly_favored(self, flight):
-        return scipy.stats.beta.pdf(flight / 30.0, 2.4, 1.1)
+        return self.gaussian(flight / 30.0, 0.97)
 
     def hop_favored(self, flight):
-        return scipy.stats.beta.pdf(flight / 30.0, 1.1, 2.4)
+        return self.gaussian(flight / 30.0, 0.03)
 
 
 class Population(object):
