@@ -4,37 +4,35 @@ Origami Bird Simulator for Education
 Development
 -----------
 
-1. Install [Qt4](http://qt-project.org/) and
-   [PyQt4](http://www.riverbankcomputing.com/software/pyqt/intro)
+1. Install requirements:
+   [Qt4](http://qt-project.org/),
+   [PyQt4](http://www.riverbankcomputing.com/software/pyqt/intro),
+   [numpy](http://www.numpy.org/), and [matplotlib](http://matplotlib.org/)
+
    ```
    % brew install qt
    % brew install pyqt
+   % brew install numpy
+   % brew install matplotlib --with-pyqt
    ```
 
-1. Create virtualenv for the project
-   ```
-   % easy_install --user pip
-   % ~/Library/Python/2.7/bin/pip install --user virtualenv
-   % ~/Library/Python/2.7/bin/virtualenv ~/.virtualenv/oribir
-   % source ~/.virtualenv/oribir/bin/activate
-   (oribir)% echo "$(brew --prefix)/lib/python2.7/site-packages" > ${VIRTUAL_ENV}/lib/python2.7/site-packages/homebrew.pth
-   ```
+1. Put `.pth` file in the user `site-packages` directory.
 
-1. Install [numpy](http://www.numpy.org/),
-   [scipy](http://www.scipy.org/), [matplotlib](http://matplotlib.org/)
    ```
-   (oribir)% pip install numpy matplotlib
+   % echo "$(brew --prefix)/lib/python2.7/site-packages" > ~/Library/Python/2.7/lib/python2.7/site-packages/homebrew.pth
    ```
 
 1. Download source
+
    ```
-   (oribir)% git clone https://github.com/heavywatal/oribir.git ~/git/oribir
-   (oribir)% cd ~/git/oribir
+   % git clone https://github.com/heavywatal/oribir.git ~/git/oribir
+   % cd ~/git/oribir
    ```
 
 1. Run
+
    ```
-   (oribir)% make run
+   % make run
    ```
 
 1. Build executable app with [PyInstaller](http://www.pyinstaller.org/)
