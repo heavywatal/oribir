@@ -3,3 +3,4 @@
 translations.py
 build/
 dist/
+*.bak

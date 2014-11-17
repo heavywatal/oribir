@@ -23,3 +23,6 @@ translations.py: ${SRCS}
 	pylupdate4 -verbose translations/pyqt4.pro
 	lrelease translations/ja_JP.ts
 	pyrcc4 translations.qrc -o translations.py
+
+methods: methods.md
+	pandoc $< -o build/methods.docx
