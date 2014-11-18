@@ -259,12 +259,22 @@
     <message>
         <location filename="../qtapp.py" line="386"/>
         <source>Environment 1</source>
-        <translation>環境 1</translation>
+        <translation type="obsolete">環境 1</translation>
     </message>
     <message>
         <location filename="../qtapp.py" line="387"/>
         <source>Environment 2</source>
-        <translation>環境 2</translation>
+        <translation type="obsolete">環境 2</translation>
+    </message>
+    <message>
+        <location filename="../qtapp.py" line="386"/>
+        <source>Population 1</source>
+        <translation>集団 1</translation>
+    </message>
+    <message>
+        <location filename="../qtapp.py" line="387"/>
+        <source>Population 2</source>
+        <translation>集団 2</translation>
     </message>
 </context>
 </TS>

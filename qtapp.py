@@ -383,8 +383,8 @@ class TabWidget(QtGui.QTabWidget):
         return
 
     def retr(self):
-        self.setTabText(0, self.tr("Environment 1"))
-        self.setTabText(1, self.tr("Environment 2"))
+        self.setTabText(0, self.tr("Population 1"))
+        self.setTabText(1, self.tr("Population 2"))
         self.setTabText(2, self.tr("Crossing Experiment"))
         self._crossing.parents_labels[0].setText(self.tabText(0))
         self._crossing.parents_labels[1].setText(self.tabText(1))
