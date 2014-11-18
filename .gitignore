@@ -1,6 +1,7 @@
 *.pyc
 *.spec
 translations.py
+*.qm
 build/
 dist/
 *.bak
