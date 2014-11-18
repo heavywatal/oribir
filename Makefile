@@ -23,3 +23,9 @@ translations.py: translations/ja_JP.ts ${SRCS}
 
 methods: methods.md
 	pandoc $< -o build/methods.docx
+
+exe:
+	pyinstaller -ywF --clean ${MAIN}
+
+app:
+	pyinstaller -ywD --clean ${MAIN}
