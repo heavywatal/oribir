@@ -1,7 +1,8 @@
-SRCS := chromosome.py individual.py population.py simulation.py selection.py qaction.py qchart.py qgraphics.py qparams.py qtapp.py setup.py translations/pyqt4.pro
+MAIN := Oribir.py
+SRCS := chromosome.py individual.py population.py simulation.py selection.py ${MAIN} qaction.py qchart.py qgraphics.py qparams.py translations/pyqt4.pro
 
 .DEFAULT_GOAL := all
-.PHONY: all clean open run build
+.PHONY: all clean open run methods exe app
 
 all:
 	$(MAKE) build
@@ -13,15 +14,11 @@ open:
 	open -a mi ${SRCS}
 
 run: translations.py
-	python qtapp.py
+	python ${MAIN}
 
-build:
-	pyinstaller --windowed -n OBS -y -d qtapp.py
-#	python setup.py
-
-translations.py: ${SRCS}
+translations.py: translations/ja_JP.ts ${SRCS}
 	pylupdate4 -verbose translations/pyqt4.pro
-	lrelease translations/ja_JP.ts
+	lrelease $<
 	pyrcc4 translations.qrc -o translations.py
 
 methods: methods.md
