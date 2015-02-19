@@ -79,14 +79,14 @@ if __name__ == '__main__':
     figure.add_subplot(1, 1, 1)
     ax = figure.axes[0]
     ax.plot(xaxis, [landscape.hop_favored(x) for x in xaxis],
-            label="Oasis-rich", linewidth=3)
+            label="Oasis-rich", linewidth=3, color='#000000')
     ax.plot(xaxis, [landscape.original(x) for x in xaxis],
-            label="Original", linewidth=3)
+            label="Original", linewidth=3, color='#000000', linestyle='--')
     ax.plot(xaxis, [landscape.fly_favored(x) for x in xaxis],
-            label="Oasis-poor", linewidth=3)
+            label="Oasis-poor", linewidth=3, color='#000000', linestyle=':')
     plt.ylim(0, 1.05)
-    ax.set_title("Fitness Landscape for Origami Birds")
+#    ax.set_title("Fitness Landscape for Origami Birds")
     ax.set_ylabel("Fitness")
-    ax.set_xlabel("Flight")
+    ax.set_xlabel("Flight distance")
     ax.legend(loc="lower center", ncol=3)
     figure.savefig("fitness_landscape.png")
