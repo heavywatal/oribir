@@ -1,8 +1,17 @@
 Origami Bird Simulator for Education
 ====================================
 
-Development
------------
+Takahiro Yamanoi and Watal M. Iwasaki (2015)
+Origami Bird Simulator: a teaching resource linking natural selection and speciation.
+[*Evolution: Education and Outreach* **8** 1 (in press)](http://link.springer.com/journal/12052/8/1/)
+
+Download an executable file
+---------------------------
+
+https://github.com/heavywatal/oribir/releases
+
+Build from source code
+----------------------
 
 1. Install requirements:
    [Qt4](http://qt-project.org/),
@@ -51,3 +60,9 @@ Development
    ```
    % /path/to/pyinstaller -yw Oribir.py
    ```
+
+Web Application
+---------------
+
+[Web-app version](http://heavywatal.github.io/oribir.js/) will be available soon!
+It is under development at https://github.com/heavywatal/oribir.js
