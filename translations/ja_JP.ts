@@ -39,12 +39,12 @@
 <context>
     <name>CrossingWidget</name>
     <message>
-        <location filename="../Oribir.py" line="349"/>
+        <location filename="../Oribir.py" line="344"/>
         <source>Crossing Experiment</source>
         <translation>交配実験</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="349"/>
+        <location filename="../Oribir.py" line="344"/>
         <source>Select an individual from each simulation</source>
         <translation>実験に使う個体をそれぞれの条件のシミュレーションから選んでおいてください</translation>
     </message>
@@ -52,12 +52,12 @@
 <context>
     <name>EvolutionWidget</name>
     <message>
-        <location filename="../Oribir.py" line="201"/>
+        <location filename="../Oribir.py" line="196"/>
         <source>Forewing</source>
         <translation>前羽サイズ</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="201"/>
+        <location filename="../Oribir.py" line="196"/>
         <source>Hindwing</source>
         <translation>後羽サイズ</translation>
     </message>
@@ -67,7 +67,7 @@
         <translation type="obsolete">飛行距離</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="200"/>
+        <location filename="../Oribir.py" line="195"/>
         <source>10 individuals randomly chosen</source>
         <translation>集団の中から10個体をランダムに表示</translation>
     </message>
@@ -77,27 +77,27 @@
         <translation type="obsolete">交配実験に使う個体を選んでクリック</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="214"/>
+        <location filename="../Oribir.py" line="209"/>
         <source>Note</source>
         <translation>注意</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="214"/>
+        <location filename="../Oribir.py" line="209"/>
         <source>The simulation state in this tab is reset</source>
         <translation>リセットによって、このタブのシミュレーション結果は消去されます</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="205"/>
+        <location filename="../Oribir.py" line="200"/>
         <source>Generations</source>
         <translation>世代数</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="199"/>
+        <location filename="../Oribir.py" line="194"/>
         <source>Click one for crossing experiment</source>
         <translation>交配実験に使う個体を選んでクリック</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="201"/>
+        <location filename="../Oribir.py" line="196"/>
         <source>Flight Distance</source>
         <translation>飛行距離</translation>
     </message>
@@ -105,12 +105,12 @@
 <context>
     <name>LockButton</name>
     <message>
-        <location filename="../Oribir.py" line="114"/>
+        <location filename="../Oribir.py" line="109"/>
         <source>Lock</source>
         <translation>値を固定</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="120"/>
+        <location filename="../Oribir.py" line="115"/>
         <source>Reset</source>
         <translation>リセット</translation>
     </message>
@@ -118,7 +118,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../Oribir.py" line="427"/>
+        <location filename="../Oribir.py" line="422"/>
         <source>Language</source>
         <translation>言語</translation>
     </message>
@@ -126,12 +126,12 @@
 <context>
     <name>MenuBar</name>
     <message>
-        <location filename="../Oribir.py" line="470"/>
+        <location filename="../Oribir.py" line="465"/>
         <source>&amp;File</source>
         <translation>ファイル (&amp;F)</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="471"/>
+        <location filename="../Oribir.py" line="466"/>
         <source>&amp;Help</source>
         <translation>ヘルプ (&amp;H)</translation>
     </message>
@@ -180,12 +180,12 @@
 <context>
     <name>PlayPauseButton</name>
     <message>
-        <location filename="../Oribir.py" line="90"/>
+        <location filename="../Oribir.py" line="85"/>
         <source>Pause</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="95"/>
+        <location filename="../Oribir.py" line="90"/>
         <source>Start</source>
         <translation>スタート</translation>
     </message>
@@ -232,7 +232,7 @@
 <context>
     <name>TabWidget</name>
     <message>
-        <location filename="../Oribir.py" line="388"/>
+        <location filename="../Oribir.py" line="383"/>
         <source>Crossing Experiment</source>
         <translation>交配実験</translation>
     </message>
@@ -252,7 +252,7 @@
         <translation type="obsolete">交配実験に使う個体を選んでクリック</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="391"/>
+        <location filename="../Oribir.py" line="386"/>
         <source>Cross</source>
         <translation>交配</translation>
     </message>
@@ -267,12 +267,12 @@
         <translation type="obsolete">環境 2</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="386"/>
+        <location filename="../Oribir.py" line="381"/>
         <source>Population 1</source>
         <translation>集団 1</translation>
     </message>
     <message>
-        <location filename="../Oribir.py" line="387"/>
+        <location filename="../Oribir.py" line="382"/>
         <source>Population 2</source>
         <translation>集団 2</translation>
     </message>

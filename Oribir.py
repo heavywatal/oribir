@@ -7,17 +7,12 @@ import random
 import os
 import sys
 
+import numpy
+
 from PyQt4 import QtGui, QtCore
 QtCore.QTextCodec.setCodecForCStrings(QtCore.QTextCodec.codecForName("utf-8"))
 QtCore.QTextCodec.setCodecForTr(QtCore.QTextCodec.codecForName("utf-8"))
 import translations
-
-if sys.platform.startswith("darwin"):
-    sys.path.append("/System/Library/Frameworks/Python.framework/"
-                    "Versions/2.7/Extras/lib/python/PyObjc")
-    import Foundation
-
-import numpy
 
 import simulation
 from qgraphics import *
@@ -39,8 +34,8 @@ class Thread(QtCore.QThread):
         self._population = population
 
     def run(self):
-        if sys.platform.startswith("darwin"):
-            pool = Foundation.NSAutoreleasePool.alloc().init()
+#        if sys.platform.startswith("darwin"):
+#            pool = Foundation.NSAutoreleasePool.alloc().init()
 
         while not self._is_killed:
             while not (self._plot_done and self._draw_done):
